@@ -8,6 +8,6 @@ public record Pessoa(
         String email,
         String register,
         TipoPessoa tipo
-)
-{
+) {
+
 }
