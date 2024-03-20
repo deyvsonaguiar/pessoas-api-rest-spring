@@ -18,7 +18,7 @@ public class PessoaController {
     private final PessoaDtoMapper pessoaDtoMapper;
 
     @PostMapping
-    public PessoaDto createPessoa(@RequestBody, PessoaDto pessoaDto) {
+    public PessoaDto createPessoa(@RequestBody PessoaDto pessoaDto) {
         Pessoa novaPessoa = createPessoaUseCase.execute(pessoaDtoMapper.toEntity(pessoaDto));
         return pessoaDtoMapper.toDto(novaPessoa);
     }
