@@ -6,7 +6,7 @@ public record Pessoa(
         Long id,
         String nome,
         String email,
-        String register,
+        String cpfCnpj,
         TipoPessoa tipo
 ) {
 

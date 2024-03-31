@@ -20,4 +20,13 @@ public class PessoaRepositoryGateway implements PessoaGateway {
         PessoaEntity novaPessoa = pessoaRepository.save(entity);
         return pessoaEntityMapper.toPessoa(novaPessoa);
     }
+
+    @Override
+    public Pessoa findByCpfCnpj(String cpfCnpj) {
+        PessoaEntity entity =  pessoaRepository.findByCpfCnpj(cpfCnpj);
+        if(entity == null) {
+            return null;
+        }
+        return pessoaEntityMapper.toPessoa(entity);
+    }
 }

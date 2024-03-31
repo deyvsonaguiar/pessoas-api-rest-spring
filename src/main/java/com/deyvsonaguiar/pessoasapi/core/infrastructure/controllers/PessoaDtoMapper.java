@@ -8,10 +8,10 @@ import org.springframework.stereotype.Component;
 public class PessoaDtoMapper {
 
     public PessoaDto toDto(Pessoa pessoa) {
-        return new PessoaDto(pessoa.nome(), pessoa.email(), pessoa.register(), pessoa.tipo());
+        return new PessoaDto(pessoa.nome(), pessoa.email(), pessoa.cpfCnpj(), pessoa.tipo());
     }
 
     public Pessoa toEntity(PessoaDto pessoaDto) {
-        return new Pessoa(null, pessoaDto.nome(), pessoaDto.email(), pessoaDto.register(), pessoaDto.tipo());
+        return new Pessoa(null, pessoaDto.nome(), pessoaDto.email(), pessoaDto.cpfCnpj(), pessoaDto.tipo());
     }
 }
