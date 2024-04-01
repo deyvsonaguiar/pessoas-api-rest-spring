@@ -7,6 +7,9 @@ import com.deyvsonaguiar.pessoasapi.core.infrastructure.persistence.PessoaReposi
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 @RequiredArgsConstructor
 public class PessoaRepositoryGateway implements PessoaGateway {
@@ -28,5 +31,14 @@ public class PessoaRepositoryGateway implements PessoaGateway {
             return null;
         }
         return pessoaEntityMapper.toPessoa(entity);
+    }
+
+    @Override
+    public List<Pessoa> obtainAllPessoas() {
+        return pessoaRepository
+                .findAll()
+                .stream()
+                .map(pessoaEntityMapper::toPessoa)
+                .collect(Collectors.toList());
     }
 }
